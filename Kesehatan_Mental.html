@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Asesmen Gaya Belajar</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <style scoped>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+      body{
+        
+        background-color: #E4DCCF;
+      }
+      .button-24 {
+  background: #ff7c57;
+  border: 1px solid #ff7c57;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff7c57;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+      * {
+        font-family: 'Poppins', sans-serif !important;
+      }
+      body .konten.padding-x {
+        
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+      body .content {
+        background: #eeb17f;
+      }
+
+      body .content .content {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      body .content .content .tagline {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 27px;
+        /* identical to box height */
+        text-align: center;
+        color: #0D3ADB;
+      }
+
+      body .content .content .headline {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 45px;
+        line-height: 67px;
+        text-align: center;
+        color: #111F37;
+      }
+
+      body .content .content .benefits {
+        margin-top: 50px;
+      }
+
+      body .content .content .benefits .rectangle {
+        max-width: 302px;
+        max-height: 334px;
+        border: 1px solid #9BA8BE;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 26px;
+      }
+
+      body .content .content .benefits .rectangle img {
+        margin-top: 50px;
+      }
+
+      body .content .content .benefits .rectangle .headline-benefit {
+        margin-top: 40px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        /* identical to box height */
+        text-align: center;
+        color: #111F37;
+      }
+
+      body .content .content .benefits .rectangle .subheadline-benefit {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        /* or 175% */
+        text-align: center;
+        color: #627492;
+        margin-bottom: 40px;
+      }
+
+      body .content .content .button-header {
+        background: #2f443d !important;
+        margin-top: 40px;
+      }
+
+      body .content .content .button-header .btn-started {
+        width: 180px;
+        height: 50px;
+        background: #0DDB93 !important;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #001D01;
+      }
+
+      body .content .content .button-header .btn-story {
+        width: 180px;
+        height: 50px;
+        border: 1px solid #9BA8BE;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height */
+        text-align: center;
+        color: #627492;
+      }
+      .header-4-1 .modal-item.modal {
+        top: 2rem;
+      }
+
+      .header-4-1 .navbar,
+      .header-4-1 .hero {
+        background-color: #F9F5EB;  
+        padding: 3rem 2rem;
+      }
+
+      .header-4-1 .navbar-light .navbar-nav .nav-link {
+        font: 300 18px/1.5rem Poppins, sans-serif;
+        color: #1d1e3c;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .navbar-light .navbar-nav .nav-link:hover {
+        font: 600 18px/1.5rem Poppins, sans-serif;
+        color: #1d1e3c;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .navbar-light .navbar-nav .active>.nav-link,
+      .header-4-1 .navbar-light .navbar-nav .nav-link.active,
+      .header-4-1 .navbar-light .navbar-nav .nav-link.show,
+      .header-4-1 .navbar-light .navbar-nav .show>.nav-link {
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .header-4-1 .btn:focus,
+      .header-4-1 .btn:active {
+        outline: none !important;
+      }
+
+      .header-4-1 .btn-fill {
+        font: 600 18px/normal Poppins, sans-serif;
+        background-color: #ff7c57;
+        border-radius: 12px;
+        padding: 12px 32px;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-fill:hover {
+        --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-no-fill {
+        font: 300 18px/1.75rem Poppins, sans-serif;
+        color: #1d1e3c;
+        padding: 12px 32px;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .modal-item .modal-dialog .modal-content {
+        border-radius: 8px;
+      }
+
+      .header-4-1 .responsive li a {
+        padding: 1rem;
+      }
+
+      .header-4-1 .text-caption {
+        font: 600 0.875rem/1.625 Poppins, sans-serif;
+        margin-bottom: 2rem;
+        color: #ff7c57;
+      }
+
+      .header-4-1 .left-column {
+        margin-bottom: 2.75rem;
+        width: 100%;
+      }
+
+      .header-4-1 .right-column {
+        width: 100%;
+      }
+
+      .header-4-1 .title-text-big {
+        font: 600 2.25rem/2.5rem Poppins, sans-serif;
+        margin-bottom: 2rem;
+        color: #272e35;
+      }
+
+      .header-4-1 .btn-try {
+        font: 600 1rem/1.5rem Poppins, sans-serif;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        background-color: #ff7c57;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-try:hover {
+        --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-outline {
+        font: 400 1rem/1.5rem Poppins, sans-serif;
+        border: 1px solid #555b61;
+        color: #555b61;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        background-color: transparent;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-outline:hover {
+        border: 1px solid #ff7c57;
+        color: #ff7c57;
+        transition: 0.3s;
+      }
+
+      .header-4-1 .btn-outline:hover div path {
+        fill: #ff7c57;
+        transition: 0.3s;
+      }
+
+      @media (min-width: 576px) {
+        .header-4-1 .modal-item .modal-dialog {
+          max-width: 95%;
+          border-radius: 12px;
+        }
+
+        .header-4-1 .navbar {
+          padding: 3rem 2rem;
+        }
+
+        .header-4-1 .hero {
+          padding: 3rem 2rem 5rem;
+        }
+
+        .header-4-1 .title-text-big {
+          font-size: 3rem;
+          line-height: 1.2;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .header-4-1 .navbar {
+          padding: 3rem 4rem;
+        }
+
+        .header-4-1 .hero {
+          padding: 3rem 4rem 5rem;
+        }
+
+        .header-4-1 .left-column {
+          margin-bottom: 3rem;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .header-4-1 .navbar-expand-lg .navbar-nav .nav-link {
+          padding-right: 1.25rem;
+          padding-left: 1.25rem;
+        }
+
+        .header-4-1 .navbar {
+          padding: 3rem 6rem;
+        }
+
+        .header-4-1 .hero {
+          padding: 3rem 6rem 5rem;
+        }
+
+        .header-4-1 .left-column {
+          width: 50%;
+          margin-bottom: 0;
+        }
+
+        .header-4-1 .right-column {
+          width: 50%;
+        }
+
+        .header-4-1 .title-text-big {
+          font-size: 3.75rem;
+          line-height: 1.2;
+        }
+        
+    
+    
+
+      }
+    </style>
+    <div class="header-4-1 container-xxl mx-auto p-0 position-relative" style="font-family: 'Poppins', sans-serif">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="#">
+          <img style="margin-right: 0.75rem"
+            src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-2.png" alt="" />
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-item">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="modal-item modal fade" id="targetModal-item" tabindex="-1" role="dialog"
+          aria-labelledby="targetModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content bg-white border-0">
+              <div class="modal-header border-0" style="padding: 2rem; padding-bottom: 0">
+                <a class="modal-title" id="targetModalLabel">
+                  <img style="margin-top: 0.5rem"
+                    src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-2.png"
+                    alt="" />
+                </a>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" style="padding: 2rem; padding-top: 0; padding-bottom: 0">
+                <ul class="navbar-nav responsive me-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="FrontPage.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Konsultasi.html">Konsultasi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Asesmen.html">Asesmen</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tentang.html">Tentang Kami</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
+                
+              
+                <a class="btn btn-fill text-white" href="login.php">Login</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="FrontPage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Konsultasi.html">Konsultasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Asesmen.html">Asesmen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Tentang.html">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="gap-3">
+            
+            <a class="btn btn-fill text-white" href="login.php">Login</a>
+          </div>
+        </div>
+      </nav>
+
+    </style>
+    <!DOCTYPE html>
+    <section class="konten text-left padding-x">
+      <br><br>
+    <h1 style="text-align: center;">ASESMEN KESEHATAN MENTAL</h1>
+    <br><br>
+    <h4> DATA ASESMEN INI TIDAK DISIMPAN</h4>
+    <p> Silahkan isi jawaban yang sesuai dengan kondisi Anda pada setiap pertanyaan:</p>
+    <br>
+    
+      <form  method="POST" action="prosesmental.php">
+    
+        <p>1. Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele.</p>
+        <label><input type="radio" name="jawaban1" value="a" required >Tidak</label><br>
+        <label><input type="radio" name="jawaban1" value="b" required  >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban1" value="c" required >Sering</label><br>
+        <label><input type="radio" name="jawaban1" value="d" required >Selalu</label><br><br>
+    
+        <p>2. Saya merasa bibir saya sering kering.</p>
+        <label><input type="radio" name="jawaban2" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban2" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban2" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban2" value="d" required>Selalu</label><br><br>
+    
+            <p>3. Saya sama sekali tidak dapat merasakan perasaan positif.</p>
+        <label><input type="radio" name="jawaban3" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban3" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban3" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban3" value="d" required>Selalu</label><br><br>
+    
+            <p>4. Saya mengalami kesulitan bernafas (misalnya:seringkali terengah-engah atau tidak dapat bernafas padahal tidak melakukan aktivitas fisiksebelumnya).</p>
+        <label><input type="radio" name="jawaban4" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban4" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban4" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban4" value="d" required>Selalu</label><br><br>
+    
+            <p>5. Saya sepertinya tidak kuat lagi untuk melakukan suatu kegiatan.</p>
+        <label><input type="radio" name="jawaban5" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban5" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban5" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban5" value="d" required>Selalu</label><br><br>
+    
+            <p>6. Saya cenderung bereaksi berlebihan terhadap suatu situasi.</p>
+        <label><input type="radio" name="jawaban6" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban6" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban6" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban6" value="d" required>Selalu</label><br><br>
+    
+            <p>7. Saya merasa goyah (misalnya, kaki terasa mau 'copot').</p>
+        <label><input type="radio" name="jawaban7" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban7" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban7" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban7" value="d" required>Selalu</label><br><br>
+    
+            <p>8. Saya merasa sulit untuk bersantai.</p>
+        <label><input type="radio" name="jawaban8" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban8" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban8" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban8" value="d" required>Selalu</label><br><br>
+    
+            <p>9. Saya menemukan diri saya berada dalam situasi yang membuat saya merasa sangat cemas dan saya akan merasa sangat lega jika semua ini berakhir.</p>
+        <label><input type="radio" name="jawaban9" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban9" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban9" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban9" value="d" required>Selalu</label><br><br>
+    
+            <p>10. Saya merasa tidak ada hal yang dapat diharapkan di masa depan.</p>
+        <label><input type="radio" name="jawaban10" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban10" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban10" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban10" value="d" required>Selalu</label><br><br>
+    
+            <p>11. Saya menemukan diri saya mudah merasa kesal.</p>
+        <label><input type="radio" name="jawaban11" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban11" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban11" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban11" value="d" required>Selalu</label><br><br>
+    
+            <p>12. Saya merasa telah menghabiskan banyak energi untuk merasa cemas.</p>
+        <label><input type="radio" name="jawaban12" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban12" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban12" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban12" value="d" required>Selalu</label><br><br>
+    
+            <p>13. Saya merasa sedih dan tertekan.</p>
+        <label><input type="radio" name="jawaban13" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban13" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban13" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban13" value="d" required>Selalu</label><br><br>
+    
+            <p>14. Saya menemukan diri saya menjadi tidak sabarketika mengalami penundaan (misalnya:kemacetan lalu lintas, menunggu sesuatu).</p>
+        <label><input type="radio" name="jawaban14" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban14" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban14" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban14" value="d" required>Selalu</label><br><br>
+    
+            <p>15. Saya merasa lemas seperti mau pingsan (misalnya:kemacetan lalu lintas, menunggu sesuatu).</p>
+        <label><input type="radio" name="jawaban15" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban15" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban15" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban15" value="d" required>Selalu</label><br><br>
+    
+            <p>16. Saya merasa saya kehilangan minat akan segala hal.</p>
+        <label><input type="radio" name="jawaban16" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban16" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban16" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban16" value="d" required>Selalu</label><br><br>
+    
+            <p>17. Saya merasa bahwa saya tidak berharga sebagai seorang manusia.</p>
+        <label><input type="radio" name="jawaban17" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban17" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban17" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban17" value="d" required>Selalu</label><br><br>
+    
+            <p>18. Saya merasa bahwa saya mudah tersinggung.</p>
+        <label><input type="radio" name="jawaban18" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban18" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban18" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban18" value="d" required>Selalu</label><br><br>
+    
+            <p>19. Saya berkeringat secara berlebihan (misalnya: tangan berkeringat), padahal temperatur tidak panas atau tidak melakukan aktivitas fisik sebelumnya.</p>
+        <label><input type="radio" name="jawaban19" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban19" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban19" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban19" value="d" required>Selalu</label><br><br>
+    
+            <p>20. Saya merasa takut tanpa alasan yang jelas.</p>
+        <label><input type="radio" name="jawaban20" value="a" required>Tidak</label><br>
+        <label><input type="radio" name="jawaban20" value="b" required >Kadang-kadang</label><br>
+        <label><input type="radio" name="jawaban20" value="c" required>Sering</label><br>
+        <label><input type="radio" name="jawaban20" value="d" required>Selalu</label><br><br>
+    
+        
+        <input type="submit" class= "button-24"value="Kirim">
+        <br>
+        <br>
+        <br>
+      </form>
+    </body>
+    </html>
+</section>
+
+</section><section class="h-100 w-100 bg-white" style="box-sizing: border-box">
+  <style>
+    .footer-basic {
+  padding:40px 0;
+  background-color:#F9F5EB;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#000000;
+  margin-bottom:0;
+}
+
+.centered-table {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;  }
+
+/* Credit to https://epicbootstrap.com/snippets/footer-basic */
+    </style>
+      
+  
+      <div class="footer-basic">
+        <footer>
+            <p class="copyright">ASK - ME © 2023</p>
+        </footer>
+    </div>
+
+</body>
+  </html>
+
+  
